@@ -22,7 +22,7 @@ class ContentFilterController: UITableViewController {
 	@IBOutlet weak var rulesServerCell: TextFieldCell!
 
 	/// A variable to pass as the context to addObserver()
-	var rulesContext = 0
+	//var rulesContext = 0
 
 	/// The current list of filtering rules
 	var currentRules = [(String, String)]()
@@ -30,15 +30,14 @@ class ContentFilterController: UITableViewController {
 	// MARK: Initializers
 
 	deinit {
-		var context = self
-		FilterUtilities.defaults?.removeObserver(self, forKeyPath: "rules", context:&context)
+		FilterUtilities.defaults?.removeObserver(self, forKeyPath: "rules", context: nil)
 	}
 
 	// MARK: UIViewController
 
 	/// Handle the event where the view is loaded into memory.
 	override func viewDidLoad() {
-		FilterUtilities.defaults?.addObserver(self, forKeyPath: "rules", options: NSKeyValueObservingOptions.initial, context:&rulesContext)
+		FilterUtilities.defaults?.addObserver(self, forKeyPath: "rules", options: NSKeyValueObservingOptions.initial, context: nil)
 
 		statusCell.valueChanged = {
 			if self.statusCell.isOn && NEFilterManager.shared().providerConfiguration == nil {
@@ -98,7 +97,7 @@ class ContentFilterController: UITableViewController {
 
 	/// Handle changes to the rules
 	override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-		if context == &rulesContext && keyPath == "rules" {
+		if keyPath == "rules" {
 			reloadRules()
 		} else {
 			super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)

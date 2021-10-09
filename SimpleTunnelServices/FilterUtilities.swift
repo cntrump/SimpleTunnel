@@ -42,7 +42,7 @@ open class FilterUtilities {
 	// MARK: Properties
 
 	/// A reference to the SimpleTunnel user defaults.
-	open static let defaults = UserDefaults(suiteName: "group.com.example.apple-samplecode.SimpleTunnel")
+	public static let defaults = UserDefaults(suiteName: "group.com.example.apple-samplecode.SimpleTunnel")
 
 	// MARK: Initializers
 
@@ -52,7 +52,7 @@ open class FilterUtilities {
 
 		guard !hostname.isEmpty else { return (.allow, hostname, [:]) }
 
-		guard let hostNameRule = (defaults?.object(forKey: "rules") as AnyObject).object(forKey: hostname) as? [String: AnyObject] else {
+		guard let hostNameRule = (defaults?.object(forKey: "rules") as AnyObject?)?.object(forKey: hostname) as? [String: AnyObject] else {
 			simpleTunnelLog("\(hostname) is set for NO RULES")
 			return (.allow, hostname, [:])
 		}
@@ -78,10 +78,10 @@ open class FilterUtilities {
 	open class func fetchRulesFromServer(_ serverAddress: String?) {
 		simpleTunnelLog("fetch rules called")
 
-		guard serverAddress != nil else { return }
+		guard let serverAddress = serverAddress else { return }
 		simpleTunnelLog("Fetching rules from \(serverAddress)")
 
-		guard let infoURL = URL(string: "http://\(serverAddress!)/rules/") else { return }
+		guard let infoURL = URL(string: "http://\(serverAddress)/rules/") else { return }
 		simpleTunnelLog("Rules url is \(infoURL)")
 
 		let content: String

@@ -33,7 +33,7 @@ class SavedData {
 
 	/// Add a data blob and offset to the end of the list.
 	func append(_ data: Data, offset: Int) {
-		chain.append(data: data, offset: offset)
+		chain.append((data: data, offset: offset))
 	}
 
 	/// Write as much of the data in the list as possible to a stream
@@ -218,13 +218,13 @@ public enum SettingsKey: String {
 }
 
 /// Get a value from a plist given a list of keys.
-public func getValueFromPlist(_ plist: [NSObject: AnyObject], keyArray: [SettingsKey]) -> AnyObject? {
+public func getValueFromPlist(_ plist: [String: AnyObject], keyArray: [SettingsKey]) -> AnyObject? {
 	var subPlist = plist
 	for (index, key) in keyArray.enumerated() {
 		if index == keyArray.count - 1 {
-			return subPlist[key.rawValue as NSString]
+			return subPlist[key.rawValue]
 		}
-		else if let subSubPlist = subPlist[key.rawValue as NSString] as? [NSObject: AnyObject] {
+		else if let subSubPlist = subPlist[key.rawValue] as? [String: AnyObject] {
 			subPlist = subSubPlist
 		}
 		else {

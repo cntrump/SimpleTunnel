@@ -15,9 +15,9 @@ import NetworkExtension
 /// The delegate protocol for ClientTunnelConnection.
 protocol ClientTunnelConnectionDelegate {
 	/// Handle the connection being opened.
-	func tunnelConnectionDidOpen(_ connection: ClientTunnelConnection, configuration: [NSObject: AnyObject])
+	func tunnelConnectionDidOpen(_ connection: ClientTunnelConnection, configuration: [String: AnyObject])
 	/// Handle the connection being closed.
-	func tunnelConnectionDidClose(_ connection: ClientTunnelConnection, error: NSError?)
+	func tunnelConnectionDidClose(_ connection: ClientTunnelConnection, error: Error?)
 }
 
 /// An object used to tunnel IP packets using the SimpleTunnel protocol.
@@ -89,14 +89,14 @@ class ClientTunnelConnection: Connection {
 	// MARK: Connection
 
 	/// Handle the event of the connection being established.
-	override func handleOpenCompleted(_ resultCode: TunnelConnectionOpenResult, properties: [NSObject: AnyObject]) {
+	override func handleOpenCompleted(_ resultCode: TunnelConnectionOpenResult, properties: [String: AnyObject]) {
 		guard resultCode == .success else {
-			delegate.tunnelConnectionDidClose(self, error: SimpleTunnelError.badConnection as NSError)
+			delegate.tunnelConnectionDidClose(self, error: SimpleTunnelError.badConnection)
 			return
 		}
 
 		// Pass the tunnel network settings to the delegate.
-		if let configuration = properties[TunnelMessageKey.Configuration.rawValue as NSString] as? [NSObject: AnyObject] {
+		if let configuration = properties[TunnelMessageKey.Configuration.rawValue] as? [String: AnyObject] {
 			delegate.tunnelConnectionDidOpen(self, configuration: configuration)
 		}
 		else {

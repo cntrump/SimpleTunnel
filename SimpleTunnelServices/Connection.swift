@@ -42,7 +42,7 @@ open class Connection: NSObject {
 	// MARK: Properties
 
 	/// The connection identifier.
-	open let identifier: Int
+	public let identifier: Int
 
 	/// The tunnel that contains the connection.
 	open var tunnel: Tunnel?
@@ -146,6 +146,6 @@ open class Connection: NSObject {
 	}
 
 	/// Handle the "open completed" message sent by the SimpleTunnel server.
-	open func handleOpenCompleted(_ resultCode: TunnelConnectionOpenResult, properties: [NSObject: AnyObject]) {
+	open func handleOpenCompleted(_ resultCode: TunnelConnectionOpenResult, properties: [String: AnyObject]) {
 	}
 }

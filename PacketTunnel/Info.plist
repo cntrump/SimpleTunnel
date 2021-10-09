@@ -29,5 +29,11 @@
 		<key>NSExtensionPrincipalClass</key>
 		<string>$(PRODUCT_MODULE_NAME).PacketTunnelProvider</string>
 	</dict>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>Looking for local devices with tcp Bonjour services</string>
+	<key>NSBonjourServices</key>
+	<array>
+		<string>_tunnelserver._tcp</string>
+	</array>
 </dict>
 </plist>

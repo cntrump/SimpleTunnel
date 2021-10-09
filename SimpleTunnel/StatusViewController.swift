@@ -22,6 +22,7 @@ extension NEVPNStatus: CustomStringConvertible {
         	case .connecting: return "Connecting"
         	case .disconnecting: return "Disconnecting"
         	case .reasserting: return "Reconnecting"
+            default: return ""
         }
     }
 }
@@ -71,12 +72,13 @@ class StatusViewController: UITableViewController {
 		{
 			do {
 				try session.sendProviderMessage(message) { response in
-					if response != nil {
-						let responseString = NSString(data: response!, encoding: String.Encoding.utf8.rawValue)
-						simpleTunnelLog("Received response from the provider: \(responseString)")
-					} else {
-						simpleTunnelLog("Got a nil response from the provider")
-					}
+                    guard let response = response else {
+                        simpleTunnelLog("Got a nil response from the provider")
+                        return
+                    }
+
+                    let responseString = String(data: response, encoding: String.Encoding.utf8)
+                    simpleTunnelLog("Received response from the provider: \(String(describing: responseString))")
 				}
 			} catch {
 				simpleTunnelLog("Failed to send a message to the provider")

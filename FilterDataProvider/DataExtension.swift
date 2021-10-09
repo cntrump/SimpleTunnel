@@ -95,7 +95,7 @@ class DataExtension: NEFilterDataProvider {
 
 			case .needMoreRulesFromDataAndAllow:
 				simpleTunnelLog("\(hostname) is set to need rules and let the data provider allow")
-				if let hostnameIndex = allowNeedRules.index(of: hostname) {
+                if let hostnameIndex = allowNeedRules.firstIndex(of: hostname) {
 					allowNeedRules.remove(at: hostnameIndex)
 					simpleTunnelLog("Allowing \(hostname) since need rules response returned")
 				}
@@ -107,7 +107,7 @@ class DataExtension: NEFilterDataProvider {
 
 			case .needMoreRulesFromDataAndBlock:
 				simpleTunnelLog("\(hostname) is set to need rules and let the data provider block")
-				if let hostnameIndex = blockNeedRules.index(of: hostname) {
+                if let hostnameIndex = blockNeedRules.firstIndex(of: hostname) {
 					blockNeedRules.remove(at: hostnameIndex)
 					simpleTunnelLog("Blocking \(hostname) since need rules response returned")
 					result = NEFilterDataVerdict.drop()
@@ -202,7 +202,7 @@ class DataExtension: NEFilterDataProvider {
 
 			case .needMoreRulesFromDataAndAllow:
 				simpleTunnelLog("\(hostname) is set to need rules and let the data provider allow")
-				if let hostnameIndex = allowNeedRules.index(of: hostname) {
+                if let hostnameIndex = allowNeedRules.firstIndex(of: hostname) {
 					allowNeedRules.remove(at: hostnameIndex)
 					simpleTunnelLog("Allowing \(hostname) since need rules response returned")
 					result = NEFilterDataVerdict.allow()
@@ -215,7 +215,7 @@ class DataExtension: NEFilterDataProvider {
 
 			case .needMoreRulesFromDataAndBlock:
 				simpleTunnelLog("\(hostname) is set to need rules and let the data provider block")
-				if let hostnameIndex = blockNeedRules.index(of: hostname) {
+                if let hostnameIndex = blockNeedRules.firstIndex(of: hostname) {
 					blockNeedRules.remove(at: hostnameIndex)
 					simpleTunnelLog("Blocking \(hostname) since need rules response returned")
 					result = NEFilterDataVerdict.drop()
@@ -264,7 +264,7 @@ class DataExtension: NEFilterDataProvider {
 
 			case .needMoreRulesFromDataAndAllow:
 				simpleTunnelLog("\(hostname) is set to need rules and let the data provider allow")
-				if let hostnameIndex = allowNeedRules.index(of: hostname) {
+                if let hostnameIndex = allowNeedRules.firstIndex(of: hostname) {
 					allowNeedRules.remove(at: hostnameIndex)
 					simpleTunnelLog("Allowing \(hostname) since need rules response returned")
 					result = NEFilterDataVerdict.allow()
@@ -277,7 +277,7 @@ class DataExtension: NEFilterDataProvider {
 
 			case .needMoreRulesFromDataAndBlock:
 				simpleTunnelLog("\(hostname) is set to need rules and let the data provider block")
-				if let hostnameIndex = blockNeedRules.index(of: hostname) {
+                if let hostnameIndex = blockNeedRules.firstIndex(of: hostname) {
 					blockNeedRules.remove(at: hostnameIndex)
 					simpleTunnelLog("Blocking \(hostname) since need rules response returned")
 					return NEFilterDataVerdict.drop()

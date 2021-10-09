@@ -24,7 +24,7 @@ class ControlExtension : NEFilterControlProvider {
 	]
 
 	/// An integer to use as the context for key-value observing.
-	var observerContext = 0
+	//var observerContext = 0
 
 	// MARK: Interface
 
@@ -64,14 +64,14 @@ class ControlExtension : NEFilterControlProvider {
 		FilterUtilities.defaults?.setValue(defaultRules, forKey: "rules")
 		FilterUtilities.fetchRulesFromServer(self.filterConfiguration.serverAddress)
 
-		self.addObserver(self, forKeyPath: "filterConfiguration", options: [.initial, .new], context: &observerContext)
+		self.addObserver(self, forKeyPath: "filterConfiguration", options: [.initial, .new], context: nil)
 	}
 
 	// MARK: NSObject
 
 	/// Observe changes to the configuration.
 	override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-		if keyPath == "filterConfiguration" && context == &observerContext {
+		if keyPath == "filterConfiguration" {
 			simpleTunnelLog("configuration changed")
 			updateFromConfiguration()
 		} else {
