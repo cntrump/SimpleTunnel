@@ -1,0 +1,18 @@
+//
+//  SampleCode.xcconfig
+//
+
+// https://gist.github.com/steve228uk/494a9e531a7fd838b77bbd3f9589d580
+
+DEVELOPMENT_TEAM=J29VN6AP39 // Team ID
+
+// The `SAMPLE_CODE_DISAMBIGUATOR` configuration is to make it easier to build
+// and run a sample code project. Once you set your project's development team,
+// you'll have a unique bundle identifier. This is because the bundle identifier
+// is derived based on the 'SAMPLE_CODE_DISAMBIGUATOR' value. Do not use this
+// approach in your own projects—it's only useful for sample code projects because
+// they are frequently downloaded and don't have a development team set.
+SAMPLE_CODE_DISAMBIGUATOR=${DEVELOPMENT_TEAM}
+
+// This should then be used in the Info.plist
+//PRODUCT_BUNDLE_IDENTIFIER=com.example.apple-samplecode.${PRODUCT_NAME}${SAMPLE_CODE_DISAMBIGUATOR}

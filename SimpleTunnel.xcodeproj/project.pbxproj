@@ -201,6 +201,7 @@
 		B0993D451A8A6E1D00510E18 /* ServerTunnel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerTunnel.swift; sourceTree = "<group>"; };
 		B0993D4D1A8A72E000510E18 /* ClientTunnel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientTunnel.swift; sourceTree = "<group>"; };
 		B0D507F51A8943FD005D1195 /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PacketTunnelProvider.swift; path = PacketTunnel/PacketTunnelProvider.swift; sourceTree = SOURCE_ROOT; };
+		BA6BFB152713AAB70043CA05 /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = SampleCode.xcconfig; sourceTree = "<group>"; };
 		C41887391AC60F7E004F638A /* ConnectionRuleAddEditController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionRuleAddEditController.swift; sourceTree = "<group>"; };
 		C418873B1AC60FE8004F638A /* ConnectionRuleListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionRuleListController.swift; sourceTree = "<group>"; };
 		C43B49251B1F610B0007B509 /* ServerUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerUtils.h; sourceTree = "<group>"; };
@@ -347,6 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				C47810631B42E10900B584D7 /* README.md */,
+				BA6BFB152713AAB70043CA05 /* SampleCode.xcconfig */,
 				442B692B1B0671A100382B6D /* AppProxy */,
 				B07CCB391A8940E600A4F1E5 /* SimpleTunnel */,
 				B07CCB6E1A89414500A4F1E5 /* PacketTunnel */,
@@ -605,30 +607,37 @@
 				TargetAttributes = {
 					442B69371B06724900382B6D = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = J29VN6AP39;
 						LastSwiftMigration = 0800;
 					};
 					720FCA941B057C7900B168EB = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = J29VN6AP39;
 						LastSwiftMigration = 0800;
 					};
 					720FCAA61B057C9400B168EB = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = J29VN6AP39;
 						LastSwiftMigration = 0800;
 					};
 					B01A16931A8A615F00BC9EFD = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = J29VN6AP39;
 						LastSwiftMigration = 0800;
 					};
 					B07CCB361A8940E600A4F1E5 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = J29VN6AP39;
 						LastSwiftMigration = 0800;
 					};
 					B07CCB6C1A89414500A4F1E5 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = J29VN6AP39;
 						LastSwiftMigration = 0800;
 					};
 					B0993D3A1A8A6DBC00510E18 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = J29VN6AP39;
 					};
 				};
 			};
@@ -869,12 +878,13 @@
 /* Begin XCBuildConfiguration section */
 		442B69401B06724900382B6D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA6BFB152713AAB70043CA05 /* SampleCode.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = AppProxy/AppProxy.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = AppProxy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnel.AppProxy";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnel${SAMPLE_CODE_DISAMBIGUATOR}.${PRODUCT_NAME}";
 				PRODUCT_MODULE_NAME = AppProxy;
 				PRODUCT_NAME = AppProxyProvider;
 				SKIP_INSTALL = YES;
@@ -883,12 +893,13 @@
 		};
 		442B69411B06724900382B6D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA6BFB152713AAB70043CA05 /* SampleCode.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = AppProxy/AppProxy.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = AppProxy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnel.AppProxy";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnel${SAMPLE_CODE_DISAMBIGUATOR}.${PRODUCT_NAME}";
 				PRODUCT_MODULE_NAME = AppProxy;
 				PRODUCT_NAME = AppProxyProvider;
 				SKIP_INSTALL = YES;
@@ -897,6 +908,7 @@
 		};
 		720FCAA11B057C7900B168EB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA6BFB152713AAB70043CA05 /* SampleCode.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = FilterDataProvider/DataFilterExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -905,7 +917,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = FilterDataProvider/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnel.FilterDataProvider";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnel${SAMPLE_CODE_DISAMBIGUATOR}.${PRODUCT_NAME}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -913,6 +925,7 @@
 		};
 		720FCAA21B057C7900B168EB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA6BFB152713AAB70043CA05 /* SampleCode.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = FilterDataProvider/DataFilterExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -920,7 +933,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = FilterDataProvider/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnel.FilterDataProvider";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnel${SAMPLE_CODE_DISAMBIGUATOR}.${PRODUCT_NAME}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -928,6 +941,7 @@
 		};
 		720FCAB31B057C9400B168EB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA6BFB152713AAB70043CA05 /* SampleCode.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = FilterControlProvider/ControlFilterExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -936,7 +950,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = FilterControlProvider/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnel.FilterControlProvider";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnel${SAMPLE_CODE_DISAMBIGUATOR}.${PRODUCT_NAME}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -944,6 +958,7 @@
 		};
 		720FCAB41B057C9400B168EB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA6BFB152713AAB70043CA05 /* SampleCode.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = FilterControlProvider/ControlFilterExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -951,7 +966,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = FilterControlProvider/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnel.FilterControlProvider";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnel${SAMPLE_CODE_DISAMBIGUATOR}.${PRODUCT_NAME}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -959,8 +974,9 @@
 		};
 		B01A16AD1A8A616000BC9EFD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA6BFB152713AAB70043CA05 /* SampleCode.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -970,7 +986,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "-fapplication-extension";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnelServices";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnel${SAMPLE_CODE_DISAMBIGUATOR}.${PRODUCT_NAME}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
@@ -981,8 +997,9 @@
 		};
 		B01A16AE1A8A616000BC9EFD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA6BFB152713AAB70043CA05 /* SampleCode.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -992,7 +1009,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "-fapplication-extension";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnelServices";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnel${SAMPLE_CODE_DISAMBIGUATOR}.${PRODUCT_NAME}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
@@ -1003,6 +1020,7 @@
 		};
 		B07CCB541A8940E600A4F1E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA6BFB152713AAB70043CA05 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				APP_NAME = SimpleTunnel;
@@ -1050,6 +1068,7 @@
 		};
 		B07CCB551A8940E600A4F1E5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA6BFB152713AAB70043CA05 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				APP_NAME = SimpleTunnel;
@@ -1089,6 +1108,7 @@
 		};
 		B07CCB571A8940E600A4F1E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA6BFB152713AAB70043CA05 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1102,7 +1122,7 @@
 				);
 				INFOPLIST_FILE = SimpleTunnel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnel";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.${PRODUCT_NAME}${SAMPLE_CODE_DISAMBIGUATOR}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1112,6 +1132,7 @@
 		};
 		B07CCB581A8940E600A4F1E5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA6BFB152713AAB70043CA05 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1121,7 +1142,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = "VPNTYPE=\\\"$(PLUGIN_BUNDLE_ID)\\\"";
 				INFOPLIST_FILE = SimpleTunnel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnel";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.${PRODUCT_NAME}${SAMPLE_CODE_DISAMBIGUATOR}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
 				VALID_ARCHS = "arm64 armv4t armv5 armv6 armv6m armv7 armv7em armv7f armv7m armv7s xscale x86_64";
@@ -1130,12 +1151,13 @@
 		};
 		B07CCB7B1A89414600A4F1E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA6BFB152713AAB70043CA05 /* SampleCode.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = PacketTunnel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnel.PacketTunnel";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnel${SAMPLE_CODE_DISAMBIGUATOR}.${PRODUCT_NAME}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -1143,12 +1165,13 @@
 		};
 		B07CCB7C1A89414600A4F1E5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA6BFB152713AAB70043CA05 /* SampleCode.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = PacketTunnel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnel.PacketTunnel";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SimpleTunnel${SAMPLE_CODE_DISAMBIGUATOR}.${PRODUCT_NAME}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -1156,6 +1179,7 @@
 		};
 		B0993D401A8A6DBC00510E18 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA6BFB152713AAB70043CA05 /* SampleCode.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
@@ -1171,6 +1195,7 @@
 		};
 		B0993D411A8A6DBC00510E18 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA6BFB152713AAB70043CA05 /* SampleCode.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
