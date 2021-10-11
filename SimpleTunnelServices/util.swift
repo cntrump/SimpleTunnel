@@ -8,6 +8,7 @@
 
 import Foundation
 import Darwin
+import os
 
 /// SimpleTunnel errors
 public enum SimpleTunnelError: Error {
@@ -241,5 +242,9 @@ func rangeByMovingStartOfRange(_ range: Range<Int>, byCount: Int) -> CountableRa
 }
 
 public func simpleTunnelLog(_ message: String) {
-	NSLog(message)
+    if #available(macOS 10.12, iOS 10.10, *) {
+        os_log("%s", type: .default, message)
+    } else {
+        NSLog("%s", message)
+    }
 }
